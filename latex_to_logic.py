@@ -1,10 +1,10 @@
+from logic_suplemental import convertions
+from logic_suplemental import rules
 import re
-from logic_suplemental import convertions, rules
-import pprint
 
 # If in test mode, file is already selected vs user entering file name
 # DEBUG
-test_mode = True
+test_mode = False
 
 
 def menu():
@@ -36,17 +36,7 @@ def split_list(list):
     for i in range(len(list)):
         new_list.append(re.findall(r'([^\s]+)', list[i]))
 
-    # DEBUG
-    if test_mode is True:
-        print('-' * 20)
-        print('Split elements')
-        print('[Assumption set, Line Number, Sentence, Annotation]')
-        print('-' * 20)
-        # [Assumption set, Line Number, Sentence, Annotation]
-        for i in new_list:
-            print(i)
-
-        return new_list
+    return new_list
 
 
 # Prints LaTex formating to the console
@@ -109,6 +99,15 @@ def main():
 
     # Split elements in list
     content_list = split_list(content_list)
+
+    # DEBUG
+    if test_mode is True:
+        print('-' * 20)
+        print('[Assumption set, Line Number, Sentence, Annotation]')
+        print('-' * 20)
+        # [Assumption set, Line Number, Sentence, Annotation]
+        for i in content_list:
+            print(i)
 
     # DEBUG
     if test_mode is True:
