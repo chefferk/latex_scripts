@@ -66,3 +66,95 @@ Quantifier Exchange (QE)                  : 1 QE               : ~@xFx -||- $x~F
 Quantifier Exchange (QE)                  : 1 QE               : ~$xFx -||- @x~Fx
 Quantifier Exchange (QE)                  : 1 QE               : ~@x~Fx -||- $xFx
 Quantifier Exchange (QE)                  : 1 QE               : ~$x~Fx -||- @xFx
+
+
+Rule                                      : Annotation         : Pattern
+--------------------- Primitive Rules ---------------------
+A (Assumption)
+&I (Ampersand Intro)
+&E (Ampersand Elim)
+vI (Wedge Intro)
+vE (Wedge Elim)
+->I (Arrow Intro)
+->E (Arrow Elim)
+RAA (Reductio ad Absurdum)
+<->I (Double-Arrow Intro)
+<->E (Double-Arrow Elim)
+@E (Universal Elim)
+@I (Universal Intro)
+$I (Existential Intro)
+$E (Existential Elim)
+=I (Identity Intro)
+=E (Identity Elim)
+--------------------- Derived Rules ---------------------
+DN (Double Negation)
+MTT (Modus Tollendo Tollens)
+HS (Hypothetical Syllogism)
+TC (True Consequent)
+FA (False Antecedent)
+IA (Impossible Antecedent)
+v->(Wedge Arrow)
+SimDil (Simple Dilemma)
+ComDil (Complex Dilemma)
+SpecDil (Special Dilemma)
+DM (DeMorgan)
+Neg-> (Negated Arrow)
+&Comm (& Commutativity)
+vComm (v Commutativity)
+<->Comm (<->Commutativity)
+Trans : (Transposition)
+&Assoc (& Associativity)
+vAssoc (v Associativity)
+&/vDist (&/v Distribution)
+v/&Dist (v/& Distribution)
+Imp/Exp (Imp/Exportation)
+BP (Biconditional Ponens)
+BT (Biconditional Tollens)
+BiTrans (BiTransposition)
+Neg<-> (Negated<->)
+Quantifier Exchange (QE)
+
+
+
+A, (Assumption)                           Premise
+&I, (Ampersand Intro)                     Conjunction
+&E, (Ampersand Elim)                      Simplification
+vI, (Wedge Intro)                         Addition
+vE, (Wedge Elim)                          Disjunctive Syllogism
+->I, (Arrow Intro)
+->E, (Arrow Elim),                        Modus Pones
+RAA, (Reductio ad Absurdum)
+<->I, (Double-Arrow Intro)                Definition of Biconditional
+<->E, (Double-Arrow Elim)                 Definition of Biconditional
+@E, (Universal Elim)                      Universal Instantiation
+@I, (Universal Intro)                     Universal Generalization
+$I, (Existential Intro)                   Existential Generalization
+$E, (Existential Elim)                    Existential Instantiation
+=I, (Identity Intro)
+=E, (Identity Elim)
+DN, (Double Negation)                     Double Negation
+MTT, (Modus Tollendo Tollens)             Modus Tollens
+HS, (Hypothetical Syllogism)              Hypothetical Syllogism
+TC, (True Consequent)
+FA, (False Antecedent)
+IA, (Impossible Antecedent)
+v->, (Wedge Arrow)                        Definition of Implication
+SimDil, (Simple Dilemma)
+ComDil, (Complex Dilemma)
+SpecDil, (Special Dilemma)
+DM, (DeMorgan)                            De Morgan
+Neg->, (Negated Arrow)                    Negated Implication
+&Comm, (& Commutativity)                  Commutativity
+vComm, (v Commutativity)                  Commutativity
+<->Comm, (<->Commutativity)               Commutativity
+Trans, (Transposition)                    Contrapositive
+&Assoc, (& Associativity)                 Associativity
+vAssoc, (v Associativity)                 Associativity
+&/vDist, (&/v Distribution)               Distribution
+v/&Dist, (v/& Distribution)               Distribution
+Imp/Exp, (Imp/Exportation)
+BP, (Biconditional Ponens)
+BT, (Biconditional Tollens)
+BiTrans, (BiTransposition)                Contrapositive
+Neg<->, (Negated<->)                      Negated Biconditional
+QE, (Quantifier Exchange)                 De Morgan
