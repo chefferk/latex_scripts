@@ -16,6 +16,21 @@ def get_file():
     return infile
 
 
+def latex_print(list):
+    assumption_set = []
+    line_number = []
+    sentence = []
+    assumption = []
+
+    for i in range(len(list)):
+        assumption_set.append(list[i][0])
+        line_number.append(list[i][1])
+        sentence.append(list[i][2])
+        assumption.append(list[i][3])
+
+        print('{} & {} ${}$ & {}\\\\' .format(assumption_set[i], line_number[i], sentence[i], assumption[i]))
+
+
 def main():
     if test_mode is True:
         infile = open('latex.txt', 'r')
@@ -30,8 +45,14 @@ def main():
     for i in range(len(content_list)):
         split_list.append(re.findall(r'([^\s]+)', content_list[i]))
 
-    for i in split_list:
-        print(i)
+    if test_mode is True:
+        # [Assumption set, Line Number, Sentence, Annotation]
+        for i in split_list:
+            print(i)
+
+        print('-' * 20)
+
+    latex_print(split_list)
 
 
 if __name__ == "__main__":
