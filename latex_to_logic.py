@@ -1,5 +1,10 @@
 import re
+from logic_suplemental import convertions, rules
+import pprint
 
+pprint.pprint(convertions)
+pprint.pprint(rules)
+print('asdf')
 # If in test mode, file is already selected vs user entering file name
 # DEBUG
 test_mode = True
@@ -16,6 +21,17 @@ def get_file():
         except Exception:
             flag = True
     return infile
+
+
+def menu():
+    print('(1) Logic to LaTex')
+    print('(2) LaTex to Logic\n')
+
+    # DEBUG
+    if test_mode is True:
+        choice = 1
+    else:
+        choice = input('Option: ')
 
 
 # Prints LaTex formating to the console
@@ -44,7 +60,12 @@ def latex_print(list):
 
 
 # Swaps symbols mainly for the sentence column, but I'm having trouble just changing that column
-def latex_swap(convertions, list):
+def sentence_swap(convertions, list):
+    if test_mode is True:
+        print('-' * 20)
+        print('Sentences after convertion')
+        print('-' * 20)
+
     # TODO(fix) : only want this to apply to list[i][2]
     for i in range(len(list)):
         for j in range(len(convertions)):
@@ -59,6 +80,11 @@ def latex_swap(convertions, list):
 
 # Swaps assumption symbols for English words, they still suck. Will need to convert again to our definitions
 def assumption_swap(rules, list):
+    if test_mode is True:
+        print('-' * 20)
+        print('Assumption after convertion')
+        print('-' * 20)
+
     for i in range(len(list)):
         for j in range(len(rules)):
             list[i] = [x.replace(rules[j][0], rules[j][2]) for x in list[i]]
@@ -79,6 +105,8 @@ def main():
                    ['all', ' \\forall ', '@'],
                    ['some', ' \\exists ', '$']]
 
+    menu()
+
     # DEBUG
     if test_mode is True:
         infile = open('latex.txt', 'r')
@@ -95,8 +123,9 @@ def main():
     rules_infile.close()
 
     # DEBUG
-    if test_mode is True:
-        print(rules)
+    this = True
+    if test_mode is True and this == False:
+        pprint.pprint(rules)
 
     # strips & splits lines -> makes 2d array
     rules_list = list()
@@ -106,7 +135,7 @@ def main():
 
     # DEBUG
     if test_mode is True:
-        print(rules_list)
+        pprint.pprint(rules_list)
 
     split_list = list()
 
@@ -132,7 +161,7 @@ def main():
     if test_mode is True:
         latex_print(swap_list)
 
-    swap_list = latex_swap(convertions, split_list)
+    swap_list = sentence_swap(convertions, split_list)
     latex_print(swap_list)
 
 
