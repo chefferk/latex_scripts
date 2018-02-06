@@ -1,0 +1,68 @@
+Rule                                      : Annotation         : Pattern
+--------------------- Primitive Rules ---------------------
+A (Assumption)                            : A                  : any wff
+&I (Ampersand Intro)                      : 1,2 &I             : P, Q |- P & Q
+&E (Ampersand Elim)                       : 1 &E               : P & Q |- P
+&E (Ampersand Elim)                       : 1 &E               : P & Q |- Q
+vI (Wedge Intro)                          : 1 vI               : P |- P v Q
+vE (Wedge Elim)                           : 1,2 vE             : P v Q, ~P |- Q
+vE (Wedge Elim)                           : 1,2 vE             : P v Q, ~Q |- P
+->I (Arrow Intro)                         : 2 ->I(1)           : [P]...Q |- P -> Q
+->E (Arrow Elim)                          : 1,2 ->E            : P -> Q, P |- Q
+RAA (Reductio ad Absurdum)                : 2,3 RAA(1)         : [P] ...Q...~Q |- ~P
+RAA (Reductio ad Absurdum)                : 2,3 RAA(1)         : [~P] ...Q...~Q |- P
+RAA (Reductio ad Absurdum)                : 2,3 RAA(1)         : [P] ...~P |- ~P
+RAA (Reductio ad Absurdum)                : 2,3 RAA(1)         : [~P] ...P |- P
+<->I (Double-Arrow Intro)                 : 1,2 <->I           : P -> Q, Q -> P |- P <-> Q
+<->E (Double-Arrow Elim)                  : 1 <->E             : P <-> Q |- P -> Q
+<->E (Double-Arrow Elim)                  : 1 <->E             : P <-> Q |- Q -> P
+@E (Universal Elim)                       : 1 @E               : @xFx |- Fa
+@I (Universal Intro)                      : 1 @I               : Fa |- @xFx
+$I (Existential Intro)                    : 1 $I               : Fa |- $xFx
+$E (Existential Elim)                     : 1,3 $E(2)          : $xFx, [Fa]...P |- P
+=I (Identity Intro)                       : =I                 : |- a = a
+=E (Identity Elim)                        : 1,2 =E             : Fa, a = b |- Fb
+--------------------- Derived Rules ---------------------
+DN (Double Negation)                      : 1 DN               : ~~P -||- P
+MTT (Modus Tollendo Tollens)              : 1,2 MTT            : P -> Q, ~Q |- ~P
+HS (Hypothetical Syllogism)               : 1,2 HS             : P -> Q, Q -> R |- P -> R
+TC (True Consequent)                      : 1 TC               : P |-  Q -> P
+FA (False Antecedent)                     : 1 FA               : ~P |-  P -> Q
+FA (False Antecedent)                     : 1 FA               : P |- ~P -> Q
+IA (Impossible Antecedent)                : 1, 2 IA            : P -> Q, P -> ~Q |- ~P
+v->(Wedge Arrow)                          : 1 v->              : ~P v Q -||-  P -> Q
+v->(Wedge Arrow)                          : 1 v->              : P v Q -||- ~P -> Q
+v->(Wedge Arrow)                          : 1 v->              : P v Q -||- ~Q -> P
+v->(Wedge Arrow)                          : 1 v->              : P v ~Q -||-  Q -> P
+SimDil (Simple Dilemma)                   : 1,2,3 SimDil       : P v Q, P -> R, Q -> R |- R
+ComDil (Complex Dilemma)                  : 1,2,3 ComDil       : P v Q, P -> R, Q -> S |- R v S
+SpecDil (Special Dilemma)                 : 1,2 SpecDil        : P -> Q, ~P -> Q |- Q
+DM (DeMorgan)                             : 1 DM               : ~(P v Q) -||- ~P & ~Q
+DM (DeMorgan)                             : 1 DM               : ~(P & Q) -||- ~P v ~Q
+DM (DeMorgan)                             : 1 DM               : P v Q  -||- ~(~P & ~Q)
+DM (DeMorgan)                             : 1 DM               : P & Q  -||- ~(~P v ~Q)
+Neg-> (Negated Arrow)                     : 1 Neg->            : ~(P->Q) -||- P&~Q
+Neg-> (Negated Arrow)                     : 1 Neg->            : ~(P->~Q) -||- P&Q
+Neg-> (Negated Arrow)                     : 1 Neg->            : P->Q  -||- ~(P&~Q)
+Neg-> (Negated Arrow)                     : 1 Neg->            : P->~Q -||- ~(P&Q)
+&Comm (& Commutativity)                   : 1 &Comm            : P & Q -||- Q & P
+vComm (v Commutativity)                   : 1 vComm            : P v Q -||- Q v P
+<->Comm (<->Commutativity)                :                    : P <-> Q -||- Q <-> P
+Trans : (Transposition)                   : 1 Trans            : P -> Q -||- ~Q -> ~P
+&Assoc (& Associativity)                  : 1 &Assoc           : P & (Q & R) -||- (P & Q) & R
+vAssoc (v Associativity)                  : 1 vAssoc           : P v (Q v R) -||- (Q v P) v R
+&/vDist (&/v Distribution)                : 1 &/v Dist         : P & (Q v R) -||- (P & Q) v (P & R)
+v/&Dist (v/& Distribution)                : 1 v/& Dist         : P v (Q & R) -||- (P v Q) & (P v R)
+Imp/Exp (Imp/Exportation) 1 Imp/Exp       :                    : P -> (Q -> R) -||- P & Q -> R
+BP (Biconditional Ponens)                 : 1,2 BP             : P <-> Q, P |- Q
+BP (Biconditional Ponens)                 : 1,2 BP             : P <-> Q, Q |- P
+BT (Biconditional Tollens)                : 1,2 BP             : P <-> Q, ~P |- ~Q
+BT (Biconditional Tollens)                : 1,2 BT             : P <-> Q, ~Q |- ~P
+BiTrans (BiTransposition)                 : 1 BiTrans          : P <-> Q -||- ~Q <-> ~P
+BiTrans (BiTransposition)                 : 1 BiTrans          : P <-> ~Q -||- ~P <-> Q
+Neg<-> (Negated<->)                       : 1 Neg<->           : ~(P <-> Q) -||- P <-> ~Q
+Neg<-> (Negated<->)                       : 1 Neg<->           : ~(P <-> Q) -||- ~P <-> Q
+Quantifier Exchange (QE)                  : 1 QE               : ~@xFx -||- $x~Fx
+Quantifier Exchange (QE)                  : 1 QE               : ~$xFx -||- @x~Fx
+Quantifier Exchange (QE)                  : 1 QE               : ~@x~Fx -||- $xFx
+Quantifier Exchange (QE)                  : 1 QE               : ~$x~Fx -||- @xFx

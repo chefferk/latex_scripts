@@ -1,0 +1,7 @@
+\neg                ~       not
+\wedge              &       and
+\vee                v       or
+\to                 ->      if-then
+\leftrightarrow     <->     iff
+\forall             @       all
+\exists             $       some
