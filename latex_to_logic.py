@@ -26,15 +26,27 @@ def latex_print(list):
         assumption_set.append(list[i][0])
         line_number.append(list[i][1])
         sentence.append(list[i][2])
+        # TODO(fix) : some rows have one more, need to combine somehow
         assumption.append(list[i][3] + list[i][-1])
 
         print('{} & {} ${}$ & {}\\\\' .format(assumption_set[i], line_number[i], sentence[i], assumption[i]))
 
 
 def latex_swap(convertions, list):
+    # TODO(fix) : only want this to apply to list[i][2]
     for i in range(len(list)):
         for j in range(len(convertions)):
             list[i] = [x.replace(convertions[j][2], convertions[j][1]) for x in list[i]]
+
+        print(list[i][2])
+
+    return list
+
+
+def assumption_swap(rules, list):
+    for i in range(len(list)):
+        for j in range(len(rules)):
+            list[i] = [x.replace(rules[j][2], rules[j][1]) for x in list[i]]
 
         print(list[i][2])
 
@@ -57,6 +69,19 @@ def main():
 
     content_list = infile.readlines()
     infile.close()
+
+    # Get rules file
+    rules_infile = open('rules2.txt', 'r')
+    rules = rules_infile.readlines()
+    rules_infile.close()
+    print(rules)
+
+    # strips & splits lines -> makes 2d array
+    rules_list = list()
+    for i in rules:
+        content = i.strip()
+        rules_list.append(content.split(', '))
+    print(rules_list)
 
     split_list = list()
 
