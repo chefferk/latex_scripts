@@ -2,7 +2,7 @@ import re
 
 # If in test mode, file is already selected vs user entering file name
 # DEBUG
-test_mode = False
+test_mode = True
 
 
 # If test mode is False, this will ask user for file name and loop until valid file is given
@@ -61,7 +61,7 @@ def latex_swap(convertions, list):
 def assumption_swap(rules, list):
     for i in range(len(list)):
         for j in range(len(rules)):
-            list[i] = [x.replace(rules[j][0], rules[j][1]) for x in list[i]]
+            list[i] = [x.replace(rules[j][0], rules[j][2]) for x in list[i]]
 
         # DEBUG
         if test_mode is True:
@@ -79,6 +79,7 @@ def main():
                    ['all', ' \\forall ', '@'],
                    ['some', ' \\exists ', '$']]
 
+    # DEBUG
     if test_mode is True:
         infile = open('latex.txt', 'r')
     else:
