@@ -4,7 +4,7 @@ import re
 
 # If in test mode, file is already selected vs user entering file name
 # DEBUG
-test_mode = False
+test_mode = True
 
 
 def menu():
