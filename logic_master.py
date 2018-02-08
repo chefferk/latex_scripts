@@ -1,6 +1,6 @@
 from logic_suplemental import *
 from latex_to_logic import *
-#from logic_to_latex import *
+# from logic_to_latex import *
 
 # DEBUG
 test_mode = True
@@ -39,7 +39,17 @@ def main():
     else:
         choice1, choice2 = menu()
 
-    print(choice1, choice2)
+    if choice1 == 1 and choice2 == 1:
+        print('Logic to LaTex - Proof')
+
+    elif choice1 == 1 and choice2 == 2:
+        print('Logic to LaTex - Single line')
+
+    elif choice1 == 2 and choice2 == 1:
+        print('LaTex to Logic - Proof')
+
+    elif choice1 == 2 and choice2 == 2:
+        print('LaTex to Logic - Proof')
 
 
 if __name__ == "__main__":
