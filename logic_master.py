@@ -1,6 +1,6 @@
 from logic_suplemental import *
 from latex_to_logic import *
-# from logic_to_latex import *
+from logic_to_latex import *
 
 # DEBUG
 test_mode = True
@@ -41,6 +41,9 @@ def main():
 
     if choice1 == 1 and choice2 == 1:
         print('Logic to LaTex - Proof')
+
+        # logic = swap(convertions, logic)
+        # logic_print(logic)
 
     elif choice1 == 1 and choice2 == 2:
         print('Logic to LaTex - Single line')

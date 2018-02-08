@@ -3,6 +3,21 @@ from logic_suplemental import rules
 from logic_suplemental import logic
 import re
 
+# If in test mode, file is already selected vs user entering file name (e.g. terminal interface)
+# DEBUG
+test_mode = True
+
+'''
+Known problems:
+    - The program changes 'v's in annotations to ' \vee '
+          FIX: just change the LaTex back to 'v'
+    - Cannot have spaces in sentences
+          FIX: delete spaces in sentences in text file prior to improt
+    - Need to have space between annotations and numbers
+    - Cannot have empy assumption set (e.g. axioms)
+          FIX: add a chracter place holder (e.g. 'x') and remove it later
+'''
+
 
 # If test mode is False, this will ask user for file name and loop until valid file is given
 def get_file():

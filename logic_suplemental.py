@@ -25,9 +25,6 @@ convertions = [['or',        ' \\vee ',              'v'],
                ['all',       ' \\forall ',           '@'],
                ['some',      ' \\exists ',           '$']]
 
-logic = swap(convertions, logic)
-logic_print(logic)
-
 rules = [
     ['RAA', '(Reductio ad Absurdum)', '(Reductio ad Absurdum)'],
     ['Neg<->', '(Negated<->)', 'Negated Biconditional'],
