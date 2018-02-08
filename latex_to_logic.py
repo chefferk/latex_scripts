@@ -1,20 +1,22 @@
 from logic_suplemental import convertions
 from logic_suplemental import rules
+from logic_suplemental import logic
 import re
 
-# If in test mode, file is already selected vs user entering file name
+# If in test mode, file is already selected vs user entering file name (e.g. terminal interface)
 # DEBUG
 test_mode = True
 
-
-def menu():
-    # DEBUG
-    if test_mode is True:
-        choice = 1
-    else:
-        print('(1) Logic to LaTex')
-        print('(2) LaTex to Logic\n')
-        choice = input('Option: ')
+'''
+Known problems:
+    - The program changes 'v's in annotations to ' \vee '
+          FIX: just change the LaTex back to 'v'
+    - Cannot have spaces in sentences
+          FIX: delete spaces in sentences in text file prior to improt
+    - Need to have space between annotations and numbers
+    - Cannot have empy assumption set (e.g. axioms)
+          FIX: add a chracter place holder (e.g. 'x') and remove it later
+'''
 
 
 # If test mode is False, this will ask user for file name and loop until valid file is given
@@ -69,12 +71,12 @@ def sentence_swap(convertions, list):
     # TODO(fix) : only want this to apply to list[i][2]
     for i in range(len(list)):
         for j in range(len(convertions)):
-            list[i] = [x.replace(convertions[j][2], convertions[j][1]) for x in list[i]]
+            list[i] = [x.replace(convertions[j][2], convertions[j][1], 1) for x in list[i]]
 
     return list
 
 
-# Swaps assumption symbols for English words, they still suck. Will need to convert again to our definitions
+# Swaps assumption symbols for English words
 def assumption_swap(rules, list):
     for i in range(len(list)):
         for j in range(len(rules)):
@@ -85,11 +87,9 @@ def assumption_swap(rules, list):
 
 def main():
 
-    menu()
-
     # DEBUG
     if test_mode is True:
-        infile = open('latex.txt', 'r')
+        infile = open('latex2.txt', 'r')
     else:
         infile = get_file()
 
