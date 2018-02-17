@@ -5,15 +5,17 @@ Some Python scipts to better work with [TAMU Logic Daemon](http://logic.tamu.edu
 ## Working definitions
 <kbd><img src="http://logic.tamu.edu/Images/lop.gif"/></kbd>
 
-### Prerequisites
+## Prerequisites
 
 Regular expression module (embedded inside Python)
 
 ```
 import re
 ```
+## Getting started
 
-### Known problems
+
+## Known problems
 * The program changes 'v's in annotations to ' \vee '
   * FIX: just change the LaTex back to 'v'
 * Cannot have spaces in sentences
