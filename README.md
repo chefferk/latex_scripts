@@ -20,14 +20,14 @@ import re
   * FIX: just change the LaTex back to 'v'
   * TODO(1) : only want this to apply to sentences
 ```
-2 & (5) $ \neg (La \wedge Na)$ & 4 & Uni \vee ersal Instantiation\\
+Uni \vee ersal Instantiation
 ```
 * The program will overwrite annotaions, similar problem as above 
   * FIX: change the LaTex back to correct, this one is a little harder to notice sometimes
   * TODO(2) : only want this to apply to annotations
   * Could possibly use regex to parse two spaces as boundary for sentences
 ```
-1 & (4) $Pa \to Qa$ &  & (Reductio ad Premisebsurdum)\\
+Reductio ad Premisebsurdum
 ```
 * Needs to be in *correct* form
   * No spaces in sentences
