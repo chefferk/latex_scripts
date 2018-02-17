@@ -1,20 +1,3 @@
-
-logic = ' |- p <-> (p & (q v ~q))'
-# x = logic.replace('~', ' \\neg ')
-# print(x)
-
-
-def swap(convertions, logic):
-    logic = logic.replace(' ', '')
-    for i in range(len(convertions)):
-        logic = logic.replace(convertions[i][2], convertions[i][1])
-    return logic
-
-
-def logic_print(logic):
-    print('${}$\\\\' .format(logic))
-
-
 convertions = [['or',        ' \\vee ',              'v'],
                ['not',       ' \\equiv ',            '-||-'],
                ['yields',    ' \\vdash ',            '|-'],
