@@ -1,4 +1,4 @@
-# https://github.com/leegao/readme2tex/blob/master/svgs/c068b57af6b6fa949824f73dcb828783.png?raw=true Scripts
+# <img src="https://github.com/chefferk/latex_scripts/blob/master/latex.png?raw=true" height="30px"/> Scripts
 
 One Paragraph of project description goes here
 
