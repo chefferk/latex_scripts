@@ -1,0 +1,16 @@
+\neg                ~       not         negation
+\wedge              &       and         conjunction
+\vee                v       or          disjunction
+\to                 ->      if-then
+\leftrightarrow     <->     iff         if and only if
+\forall             @       all         there exists
+\exists             $       some        for all
+
+ [['not', ' \\neg ', '~'],
+ ['and', ' \\wedge ', '&'],
+ ['or', ' \\vee ', 'v'],
+ ['implies', ' \\to ', '->'],
+ ['iff', ' \\leftrightarrow ', '<->'],
+ ['all', ' \\forall ', '@'],
+ ['some', ' \\exists ', '$'],
+ ['therefore, '\\therefore', '|-']]

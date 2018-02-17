@@ -1,8 +1,0 @@
-[['not', ' \\neg ', '~'],
- ['and', ' \\wedge ', '&'],
- ['or', ' \\vee ', 'v'],
- ['implies', ' \\to ', '->'],
- ['iff', ' \\leftrightarrow ', '<->'],
- ['all', ' \\forall ', '@'],
- ['some', ' \\exists ', '$'],
- ['therefore, '\\therefore', '|-']]

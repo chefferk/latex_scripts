@@ -1,12 +1,12 @@
-convertions = [['or',        ' \\vee ',              'v'],
-               ['not',       ' \\equiv ',            '-||-'],
-               ['yields',    ' \\vdash ',            '|-'],
-               ['not',       ' \\neg ',              '~'],
-               ['and',       ' \\wedge ',            '&'],
-               ['implies',   ' \\to ',               '->'],
-               ['iff',       ' \\leftrightarrow ',   '<->'],
-               ['all',       ' \\forall ',           '@'],
-               ['some',      ' \\exists ',           '$']]
+conversions = [['or', ' \\vee', 'v'],
+               ['not',       ' \\equiv',            '-||-'],
+               ['yields',    ' \\vdash',            '|-'],
+               ['not',       ' \\neg',              '~'],
+               ['and',       ' \\wedge',            '&'],
+               ['implies',   ' \\to',               '->'],
+               ['iff',       ' \\leftrightarrow',   '<->'],
+               ['all',       ' \\forall',           '@'],
+               ['some',      ' \\exists',           '$']]
 
 rules = [
     ['RAA', '(Reductio ad Absurdum)', '(Reductio ad Absurdum)'],
