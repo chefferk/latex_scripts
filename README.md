@@ -18,13 +18,13 @@ import re
 ## Known problems
 * The program changes 'v's in annotations to ' \vee '
   * FIX: just change the LaTex back to 'v'
-  * TODO(1) : only want this to apply to content_list[i][2]
+  * TODO(1) : only want this to apply to sentences
 ```
 2 & (5) $ \neg (La \wedge Na)$ & 4 & Uni \vee ersal Instantiation\\
 ```
 * The program will overwrite annotaions, similar problem as above 
   * FIX: change the LaTex back to correct, this one is a little harder to notice sometimes
-  * TODO(2) : only want this to apply to content_list[i][4]
+  * TODO(2) : only want this to apply to annotations
   * Could possibly use regex to parse two spaces as boundary for sentences
 ```
 1 & (4) $Pa \to Qa$ &  & (Reductio ad Premisebsurdum)\\
@@ -49,10 +49,4 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+* **Keaton Cheffer** - *Initial work*
