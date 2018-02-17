@@ -1,4 +1,4 @@
-# <img src="https://github.com/chefferk/latex_scripts/blob/master/latex.png?raw=true" height="30px"/> Scripts
+# <img src="https://github.com/chefferk/latex_scripts/blob/master/Notes/latex.png?raw=true" height="30px"/> Scripts
 
 Some Python scipts to better work with [TAMU Logic Daemon](http://logic.tamu.edu/daemon.html)
 
