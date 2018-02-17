@@ -83,7 +83,7 @@ def latex_print(content_list):
 # Description: Swaps symbols for sentence column from logic to LaTex
 # Input: conversions list, content list
 # Output: updated list
-# TODO : only want this to apply to list[i][2]
+# TODO(1) : only want this to apply to content_list[i][2]
 # BUG
 def sentence_swap(conversions, content_list):
     for i in range(len(content_list)):
@@ -96,7 +96,7 @@ def sentence_swap(conversions, content_list):
 # Description: Swaps annotation symbols for words
 # Input: rules list, content list
 # Output: updated list
-# TODO : only want this to apply to list[i][4]
+# TODO(2) : only want this to apply to content_list[i][4]
 # TODO : could use regex to parse two spaces as boundary for sentences
 # BUG
 def assumption_swap(rules, content_list):
@@ -115,7 +115,6 @@ def swap(conversions, logic):
     logic = logic.strip()
     for i in range(len(conversions)):
         logic = logic.replace(conversions[i][2], conversions[i][1])
-        logic = logic.lower()
     return logic
 
 
