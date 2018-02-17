@@ -30,17 +30,22 @@ Uni \vee ersal Instantiation
 Reductio ad Premisebsurdum
 ```
 * Needs to be in *correct* form
-  * No spaces in sentences
+  * No spaces in sentences (spaces are fine in first line)
     * TODO : leverage regex better to parse sentences and not have to remove spaces
   * Space between annotaion set and annotaion
     * TODO : this should be easy to split
-  
-* Cannot have empy assumption set (e.g. axioms)
-  * FIX: add a chracter place holder (e.g. 'x') and remove it later
-  * TODO : find a fix for this
+  * Cannot have empy assumption set (e.g. axioms)
+    * FIX: add a chracter place holder (e.g. 'x') and remove it later
+    * TODO : find a fix for this
 
 ```
-Give the example
+P v Q, ~P v R |- Q v R
+1       (1)   PvQ        A
+2       (2)   ~PvR       A
+1       (3)   ~Q->P      1 v->
+2       (4)   P->R       2 v->
+1,2     (5)   ~Q->R      3,4 HS
+1,2     (6)   QvR        5 v->
 ```
 
 ## Contributing
