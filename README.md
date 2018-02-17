@@ -1,4 +1,4 @@
-# <img src="https://github.com/chefferk/latex_scripts/blob/master/latex.png?raw=true" height="30px"/> Scripts
+# <img src="https://github.com/chefferk/latex_scripts/blob/master/Notes/latex.png?raw=true" height="30px"/> Scripts
 
 Some Python scipts to better work with [TAMU Logic Daemon](http://logic.tamu.edu/daemon.html)
 
@@ -18,14 +18,34 @@ import re
 ## Known problems
 * The program changes 'v's in annotations to ' \vee '
   * FIX: just change the LaTex back to 'v'
-* Cannot have spaces in sentences
-  * FIX: delete spaces in sentences in text file prior to improt
-* Need to have space between annotations and numbers
-* Cannot have empy assumption set (e.g. axioms)
-  * FIX: add a chracter place holder (e.g. 'x') and remove it later
+  * TODO(1) : only want this to apply to sentences
+```
+Uni \vee ersal Instantiation
+```
+* The program will overwrite annotaions, similar problem as above 
+  * FIX: change the LaTex back to correct, this one is a little harder to notice sometimes
+  * TODO(2) : only want this to apply to annotations
+  * Could possibly use regex to parse two spaces as boundary for sentences
+```
+Reductio ad Premisebsurdum
+```
+* Needs to be in *correct* form
+  * No spaces in sentences (spaces are fine in first line)
+    * TODO : leverage regex better to parse sentences and not have to remove spaces
+  * Space between annotaion set and annotaion
+    * TODO : this should be easy to split
+  * Cannot have empy assumption set (e.g. axioms)
+    * FIX: add a chracter place holder (e.g. 'x') and remove it later
+    * TODO : find a fix for this
 
 ```
-Give the example
+P v Q, ~P v R |- Q v R
+1       (1)   PvQ        A
+2       (2)   ~PvR       A
+1       (3)   ~Q->P      1 v->
+2       (4)   P->R       2 v->
+1,2     (5)   ~Q->R      3,4 HS
+1,2     (6)   QvR        5 v->
 ```
 
 ## Contributing
@@ -34,10 +54,4 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+* **Keaton Cheffer** - *Initial work*
