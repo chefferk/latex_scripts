@@ -7,17 +7,6 @@ import re
 # DEBUG
 test_mode = True
 
-'''
-Known problems:
-    - The program changes 'v's in annotations to ' \vee '
-          FIX: just change the LaTex back to 'v'
-    - Cannot have spaces in sentences
-          FIX: delete spaces in sentences in text file prior to import
-    - Need to have space between annotations and numbers
-    - Cannot have empty assumption set (e.g. axioms)
-          FIX: add a character place holder (e.g. 'x') and remove it later
-'''
-
 
 # Description: If test mode is False, this will ask user for file name and loop
 #              until valid file is given
@@ -90,7 +79,6 @@ def latex_print(content_list):
 # Description: Swaps symbols for sentence column from logic to LaTex
 # Input: conversions list, content list
 # Output: updated list
-# BUG
 def sentence_swap(conversions, content_list):
     for i in range(len(content_list)):
         for j in range(len(conversions)):
@@ -102,8 +90,6 @@ def sentence_swap(conversions, content_list):
 # Description: Swaps annotation symbols for words
 # Input: rules list, content list
 # Output: updated list
-# TODO : could use regex to parse two spaces as boundary for sentences
-# BUG
 def assumption_swap(rules, content_list):
     for i in range(len(content_list)):
         for j in range(len(rules)):
