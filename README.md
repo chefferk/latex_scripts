@@ -24,21 +24,6 @@ The `logic_to_latex.py` opens the `logic.txt` file where I just copy and paste t
 I'm sure there are better ways of doing almost all of this so I am excited to see what comes out of it. If you have any questions, let me know! My email is chefferk@tamu.edu
 
 ## Known problems
-* The program changes 'v's in annotations to ' \vee '
-  * FIX: just change the LaTex back to 'v'
-  * TODO(1) : only want this to apply to sentences
-  * *Note* I added a sneaky fix for this, but there has got to be a better way
-```
-Uni \vee ersal Instantiation
-```
-* The program will overwrite annotations, similar problem as above
-  * FIX: change the LaTex back to correct, this one is a little harder to notice sometimes
-  * TODO(2) : only want this to apply to annotations
-  * Could possibly use regex to parse two spaces as boundary for sentences
-   * *Note* I added a sneaky fix for this, but there has got to be a better way
-```
-Reductio ad Premisebsurdum
-```
 * Needs to be in *correct* form
   * No spaces in sentences (spaces are fine in first line)
     * TODO : leverage regex better to parse sentences and not have to remove spaces
