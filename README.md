@@ -13,7 +13,15 @@ Regular expression module (embedded inside Python)
 import re
 ```
 ## Getting started
+Howdy!
 
+I started this as a fun way to save some time but found it to be quite valuable. I want to pass this on to whom ever is interested as there are several things that could be improved and added.  I unfortunatly do not have as much free time to work on this as I would like so this is the perfect way to get some of those features added!
+
+There are several files but I have mainly been working on the `logic_to_latex.py` as that is the most benificial right now.  I created a file for `latex_to_logic.py` which could be useful and the `scripts.py` which would be used as a commandline interface with options.
+
+The `logic_to_latex.py` opens the `logic.txt` file where I just copy and past the code in that I want to convert.  It also imports `logicDB.py` which has the rules and conversions in it.
+
+I'm sure there are better ways of doing almost all of this so I am excited to see what comes out of it.  If you have any questions, let me know! My email is chefferk@tamu.edu  
 
 ## Known problems
 * The program changes 'v's in annotations to ' \vee '
