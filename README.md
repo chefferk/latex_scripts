@@ -15,7 +15,7 @@ import re
 ## Getting started
 Howdy!
 
-I started this as a fun way to save some time but found it to be quite valuable. I want to pass this on to anyone who is interested as there are several things that could be improved and added. I, unfortunately, do not have as much free time as I would like to work on this, so this is the perfect way to get some of those features added!
+I started this as a fun way to save some time but found it to be quite [valuable](latex_scripts/Notes/proofs_tex.pdf). I want to pass this on to anyone who is interested as there are several things that could be improved and added. I, unfortunately, do not have as much free time as I would like to work on this, so this is the perfect way to get some of those features added!
 
 There are several files but I have mainly been working on the `logic_to_latex.py` as that is the most beneficial right now. I created a file for `latex_to_logic.py` which could be useful and the `scripts.py` which would be used as a command line interface with options.
 
