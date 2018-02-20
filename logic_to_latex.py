@@ -88,7 +88,7 @@ def latex_print(content_list):
 def sentence_swap(conversions, content_list):
     for i in range(len(content_list)):
         for j in range(len(conversions)):
-            content_list[i] = [x.replace(conversions[j][2], conversions[j][1], 1) for x in content_list[i]]
+                content_list[i] = [x.replace(conversions[j][2], conversions[j][1]) for x in content_list[i]]
 
     return content_list
 
@@ -142,28 +142,28 @@ def main():
     # Split elements in list
     content_list = split_list(content_list)
 
-    # DEBUG
+    # DEBUG - 1
     if test_mode is True:
         print('-' * 20)
-        print('[Assumption set, Line Number, Sentence, Annotation]')
+        print('(1) [Assumption set, Line Number, Sentence, Annotation]')
         print('-' * 20)
         # [Assumption set, Line Number, Sentence, Annotation]
         for i in content_list:
             print(i)
 
-    # DEBUG
+    # DEBUG - 2
     if test_mode is True:
         print('-' * 20)
-        print('Initial LaTex print before any swaps')
+        print('(2) Initial LaTex print before any swaps')
         print('-' * 20)
         latex_print(content_list)
 
     content_list = assumption_swap(rules, content_list)
 
-    # DEBUG
+    # DEBUG - 3
     if test_mode is True:
         print('-' * 20)
-        print('LaTex print after Annotations are swapped')
+        print('(3) LaTex print after Annotations are swapped')
         print('-' * 20)
         latex_print(content_list)
 
@@ -171,9 +171,10 @@ def main():
 
     logic = swap(conversions, first_line)
 
+    # DEBUG - 4
     if test_mode is True:
         print('-' * 20)
-        print('LaTex print after sentences are swapped (final result)')
+        print('(4) LaTex print after sentences are swapped (final result)')
         print('-' * 20)
         latex_print_line(logic)
         print('')

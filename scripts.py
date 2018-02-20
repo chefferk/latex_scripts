@@ -3,32 +3,38 @@ from latex_to_logic import *
 from logic_to_latex import *
 
 # DEBUG
-test_mode = True
+test_mode = False
 
 
 def menu():
     flag = True
     while flag is True:
+        print('(0) Exit')
         print('(1) Logic to LaTex')
-        print('(2) LaTex to Logic\n')
+        print('(2) LaTex to Logic')
         choice1 = input('Option: ')
 
-        if choice == 1:
+        if choice1 == '1':
+            print('(0) Exit')
             print('(1) Proof')
             print('(2) Single line')
             choice2 = input('Option: ')
             flag = False
 
-        elif choice == 2:
+        elif choice1 == '2':
+            print('(0) Exit')
             print('(1) Proof')
             print('(2) Single line')
             choice2 = input('Option: ')
             flag = False
 
+        elif choice1 == '0':
+            choice2 = '0'
+            flag = False
         else:
             print('Invalid input please try again')
 
-        return choice1, choice2
+    return choice1, choice2
 
 
 def main():

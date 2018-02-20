@@ -1,6 +1,6 @@
 # <img src="https://github.com/chefferk/latex_scripts/blob/master/Notes/latex.png?raw=true" height="30px"/> Scripts
 
-Some Python scipts to better work with [TAMU Logic Daemon](http://logic.tamu.edu/daemon.html)
+Some Python scripts to better work with [TAMU Logic Daemon](http://logic.tamu.edu/daemon.html)
 
 ## Working definitions
 <kbd><img src="http://logic.tamu.edu/Images/lop.gif"/></kbd>
@@ -22,7 +22,7 @@ import re
 ```
 Uni \vee ersal Instantiation
 ```
-* The program will overwrite annotaions, similar problem as above 
+* The program will overwrite annotations, similar problem as above
   * FIX: change the LaTex back to correct, this one is a little harder to notice sometimes
   * TODO(2) : only want this to apply to annotations
   * Could possibly use regex to parse two spaces as boundary for sentences
@@ -32,10 +32,10 @@ Reductio ad Premisebsurdum
 * Needs to be in *correct* form
   * No spaces in sentences (spaces are fine in first line)
     * TODO : leverage regex better to parse sentences and not have to remove spaces
-  * Space between annotaion set and annotaion
+  * Space between annotation set and annotation
     * TODO : this should be easy to split
-  * Cannot have empy assumption set (e.g. axioms)
-    * FIX: add a chracter place holder (e.g. 'x') and remove it later
+  * Cannot have empty assumption set (e.g. axioms)
+    * FIX: add a character place holder (e.g. 'x') and remove it later
     * TODO : find a fix for this
 
 ```
