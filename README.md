@@ -27,6 +27,7 @@ I'm sure there are better ways of doing almost all of this so I am excited to se
 * The program changes 'v's in annotations to ' \vee '
   * FIX: just change the LaTex back to 'v'
   * TODO(1) : only want this to apply to sentences
+  * *Note* I added a sneaky fix for this, but there has got to be a better way
 ```
 Uni \vee ersal Instantiation
 ```
@@ -34,6 +35,7 @@ Uni \vee ersal Instantiation
   * FIX: change the LaTex back to correct, this one is a little harder to notice sometimes
   * TODO(2) : only want this to apply to annotations
   * Could possibly use regex to parse two spaces as boundary for sentences
+   * *Note* I added a sneaky fix for this, but there has got to be a better way
 ```
 Reductio ad Premisebsurdum
 ```
