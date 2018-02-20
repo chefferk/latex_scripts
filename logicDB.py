@@ -6,7 +6,8 @@ conversions = [['or', ' \\vee ', 'v'],
                ['implies',   ' \\to ',               '->'],
                ['iff',       ' \\leftrightarrow ',   '<->'],
                ['all',       ' \\forall ',           '@'],
-               ['some',      ' \\exists ',           '$']]
+               ['some',      ' \\exists ',           '$'],
+               ['FIX', 'ive', 'i \\vee e']]
 
 rules = [
     ['RAA', '(Reductio ad Absurdum)', '(Reductio ad Absurdum)'],
@@ -50,4 +51,5 @@ rules = [
     ['BP', '(Biconditional Ponens)', '(Biconditional Ponens)'],
     ['BT', '(Biconditional Tollens)', '(Biconditional Tollens)'],
     ['BiTrans', '(BiTransposition)', 'Contrapositive'],
-    ['QE', '(Quantifier Exchange)', 'De Morgan']]
+    ['QE', '(Quantifier Exchange)', 'De Morgan'],
+    ['(Reductio ad Premisebsurdum)', 'FIX', '(Reductio ad Absurdum)']]
