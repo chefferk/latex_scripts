@@ -42,7 +42,14 @@ def split_list(content_list):
     # Split elements in list
     new_list = []
     for i in range(len(content_list)):
-        new_list.append(re.findall(r'([^\s]+)', content_list[i]))
+        matches = re.findall(r'([^\s]+)', content_list[i])
+        # handle empty assumption set
+        if matches[0][0] == '(':
+            matches.insert(0,'')
+        # handle assumption line
+        if matches[3] == 'A':
+            matches.insert(3,'')
+        new_list.append((matches))
 
     return new_list
 
@@ -83,12 +90,11 @@ def latex_print(content_list):
 # Description: Swaps symbols for sentence column from logic to LaTex
 # Input: conversions list, content list
 # Output: updated list
-# TODO(1) : only want this to apply to content_list[i][2]
 # BUG
 def sentence_swap(conversions, content_list):
     for i in range(len(content_list)):
         for j in range(len(conversions)):
-                content_list[i] = [x.replace(conversions[j][2], conversions[j][1]) for x in content_list[i]]
+                content_list[i][2] = content_list[i][2].replace(conversions[j][2], conversions[j][1])
 
     return content_list
 
@@ -96,13 +102,12 @@ def sentence_swap(conversions, content_list):
 # Description: Swaps annotation symbols for words
 # Input: rules list, content list
 # Output: updated list
-# TODO(2) : only want this to apply to content_list[i][4]
 # TODO : could use regex to parse two spaces as boundary for sentences
 # BUG
 def assumption_swap(rules, content_list):
     for i in range(len(content_list)):
         for j in range(len(rules)):
-            content_list[i] = [x.replace(rules[j][0], rules[j][2]) for x in content_list[i]]
+            content_list[i][4] = content_list[i][4].replace(rules[j][0], rules[j][2])
 
     return content_list
 
