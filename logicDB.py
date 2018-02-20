@@ -6,15 +6,13 @@ conversions = [['or', ' \\vee ', 'v'],
                ['implies',   ' \\to ',               '->'],
                ['iff',       ' \\leftrightarrow ',   '<->'],
                ['all',       ' \\forall ',           '@'],
-               ['some',      ' \\exists ',           '$'],
-               ['FIX', 'ive', 'i \\vee e']]
+               ['some',      ' \\exists ',           '$']]
 
 rules = [
-    ['RAA', '(Reductio ad Absurdum)', '(Reductio ad Absurdum)'],
+    ['RAA', '(Reductio ad Absurdum)', 'Reductio ad Absurdum'],
     ['Neg<->', '(Negated<->)', 'Negated Biconditional'],
     ['<->I', '(Double-Arrow Intro)', 'Definition of Biconditional'],
     ['<->E', '(Double-Arrow Elim)', 'Definition of Biconditional'],
-    ['A', '(Assumption)', 'Premise'],
     ['&I', '(Ampersand Intro)', 'Conjunction'],
     ['&E', '(Ampersand Elim)', 'Simplification'],
     ['vI', '(Wedge Intro)', 'Addition'],
@@ -51,5 +49,4 @@ rules = [
     ['BP', '(Biconditional Ponens)', '(Biconditional Ponens)'],
     ['BT', '(Biconditional Tollens)', '(Biconditional Tollens)'],
     ['BiTrans', '(BiTransposition)', 'Contrapositive'],
-    ['QE', '(Quantifier Exchange)', 'De Morgan'],
-    ['(Reductio ad Premisebsurdum)', 'FIX', '(Reductio ad Absurdum)']]
+    ['QE', '(Quantifier Exchange)', 'De Morgan']]
