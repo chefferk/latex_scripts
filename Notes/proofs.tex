@@ -1,0 +1,333 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,latexsym,paralist,url}
+\usepackage[margin=1in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+\usepackage{csquotes}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{resources}{Resources}
+
+%%% CONSTANTS
+\newcommand{\mysemester}[0]{Spring 2018}
+\newcommand{\myname}[0]{Keaton Cheffer}
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customize the layout...
+\lhead{CSCE 222}\chead{Proofs }\rhead{\myname}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+\title{CSCE 222: Discrete Structures for Computing\\\mysemester}
+\author{\myname}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\bigskip
+
+\noindent
+Modus Ponens:\\
+
+$P,P \to Q \vdash Q$\\
+
+\begin{tabular}{llll}
+1 & (1) $P$ &  & Premise\\
+2 & (2) $P \to Q$ &  & Premise\\
+1,2 & (3) $Q$ & 1,2 & Modus Pones\\
+\end{tabular}
+
+\bigskip
+\bigskip
+
+\noindent
+Modus Tollens: \\
+
+$ \neg Q,P \to Q \vdash  \neg P$\\
+
+\begin{tabular}{llll}
+1 & (1) $ \neg Q$ &  & Premise\\
+2 & (2) $P \to Q$ &  & Premise\\
+1,2 & (3) $ \neg P$ & 1,2 & Modus Tollens\\
+\end{tabular}
+
+\bigskip
+\bigskip
+
+\noindent
+Hypothetical Syllogism: \\
+
+$P \to Q,Q \to R \vdash P \to R$\\
+
+\begin{tabular}{llll}
+1 & (1) $P \to Q$ &  & Premise\\
+2 & (2) $Q \to R$ &  & Premise\\
+1,2 & (3) $P \to R$ & 1,2 & Hypothetical Syllogism\\
+\end{tabular}
+
+\bigskip
+\bigskip
+
+\noindent
+Disjunctive Syllogism: \\
+
+$P \vee Q, \neg P \vdash Q$\\
+
+\begin{tabular}{llll}
+1 & (1) $P \vee Q$ &  & Premise\\
+2 & (2) $ \neg P$ &  & Premise\\
+1,2 & (3) $Q$ & 1,2 & Disjunctive Syllogism\\
+\end{tabular}
+
+\bigskip
+\bigskip
+
+\noindent
+Addition: \\
+
+$P \vdash P \vee Q$\\
+
+\begin{tabular}{llll}
+1 & (1) $P$ &  & Premise\\
+1 & (2) $P \vee Q$ & 1 & Addition\\
+\end{tabular}
+
+\newpage
+
+\noindent
+Simplification: \\
+
+$P \wedge Q \vdash P$\\
+
+\begin{tabular}{llll}
+1 & (1) $P \wedge Q$ &  & Premise\\
+1 & (2) $P$ & 1 & Simplification\\
+\end{tabular}
+
+\bigskip
+\bigskip
+
+\noindent
+Conjunction: \\
+
+$P,Q \vdash P \wedge Q$\\
+
+\begin{tabular}{llll}
+1 & (1) $P$ &  & Premise\\
+2 & (2) $Q$ &  & Premise\\
+1,2 & (3) $P \wedge Q$ & 1,2 & Conjunction\\
+\end{tabular}
+
+\bigskip
+\bigskip
+
+\noindent
+Resolution: \\
+
+$P \vee Q, \neg P \vee R \vdash Q \vee R$\\
+
+\begin{tabular}{llll}
+1 & (1) $P \vee Q$ &  & Premise\\
+2 & (2) $ \neg P \vee R$ &  & Premise\\
+1 & (3) $ \neg Q \to P$ & 1 & Definition of Implication\\
+2 & (4) $P \to R$ & 2 & Definition of Implication\\
+1,2 & (5) $ \neg Q \to R$ & 3,4 & Hypothetical Syllogism\\
+1,2 & (6) $Q \vee R$ & 5 & Definition of Implication\\
+\end{tabular}
+
+\bigskip
+\bigskip
+
+\noindent
+Bonnie Is Guilty: \\
+
+\noindent
+Last week, there was a home robbery while the residents were out of town.  The perpetrator(s) drove a car into garage, closed it behind them, looted the home, and then made their getaway, leaving the garage door open.  Forensic evidence and reports from neighbors have lead investigators to the following facts:\\
+\begin{compactenum}
+\item The only possible suspects are John, Bonnie, and Clyde.
+\item Clyde never commits a crime without Bonnie's participation.
+\item John does not know how to drive.\\
+\end{compactenum}
+
+$J \vee (B \vee C),C \to B,J \to (B \vee C) \vdash B$\\
+
+\begin{tabular}{llll}
+1 & (1) $J \vee (B \vee C)$ &  & Premise\\
+2 & (2) $C \to B$ &  & Premise\\
+3 & (3) $J \to (B \vee C)$ &  & Premise\\
+1 & (4) $ \neg J \to (B \vee C)$ & 1 & Definition of Implication\\
+1,3 & (5) $B \vee C$ & 3,4 & (Special Dilemma)\\
+1,3 & (6) $ \neg C \to B$ & 5 & Definition of Implication\\
+1,2,3 & (7) $B$ & 2,6 & (Special Dilemma)\\
+\end{tabular}
+
+\newpage
+
+\noindent
+Lewis Carroll Example: \\
+
+\noindent
+Hummingbirds are richly colored.  No large birds eat honey.  If a bird doesn't eat honey, then it's not richly colored.  Therefore, hummingbirds are not large.\\
+
+$ \forall xH(x) \to R(x), \neg  \exists xL(x) \wedge N(x), \forall x \neg N(x) \to  \neg R(x) \vdash  \forall xH(x) \to  \neg L(x)$\\
+
+\begin{tabular}{llll}
+1 & (1) $ \forall x(H(x) \to R(x))$ &  & Premise\\
+2 & (2) $ \neg  \exists x(L(x) \wedge N(x))$ &  & Premise\\
+3 & (3) $ \forall x( \neg N(x) \to  \neg R(x))$ &  & Premise\\
+2 & (4) $ \forall x \neg (L(x) \wedge N(x))$ & 2 & De Morgan\\
+2 & (5) $ \neg (L(a) \wedge N(a))$ & 4 & Universal Instantiation\\
+2 & (6) $ \neg L(a) \vee  \neg N(a)$ & 5 & De Morgan\\
+2 & (7) $N(a) \to  \neg L(a)$ & 6 & Definition of Implication\\
+3 & (8) $ \neg N(a) \to  \neg R(a)$ & 3 & Universal Instantiation\\
+3 & (9) $R(a) \to N(a)$ & 8 & Contrapositive\\
+1 & (10) $H(a) \to R(a)$ & 1 & Universal Instantiation\\
+1,3 & (11) $H(a) \to N(a)$ & 9,10 & Hypothetical Syllogism\\
+1,2,3 & (12) $H(a) \to  \neg L(a)$ & 7,11 & Hypothetical Syllogism\\
+1,2,3 & (13) $ \forall x(H(x) \to  \neg L(x))$ & 12 & Universal Generalization\\
+\end{tabular}
+
+\bigskip
+\bigskip
+
+\noindent
+Keanu Reeves is Not Human: \\
+
+\noindent
+All humans are mortal.
+Keanu Reeves is immortal. (someone is not mortal)
+Therefore, Keanu Reeves is not a human. (someone is not a human)\\
+$Px :=$ x is a human\\
+$Qx :=$ x is mortal\\
+
+$ \forall x(Px \to Qx), \exists x \neg Qx \vdash  \exists x \neg Px$\\
+
+\begin{tabular}{llll}
+1 & (1) $ \forall x(P(x) \to Q(x))$ &  & Premise\\
+2 & (2) $ \exists x \neg Q(x)$ &  & Premise\\
+3 & (3) $ \neg Q(a)$ &  & Premise\\
+1 & (4) $P(a) \to Q(a)$ & 1 & Universal Instantiation\\
+1,3 & (5) $ \neg P(a)$ & 3,4 & Modus Tollens\\
+1,3 & (6) $ \exists x \neg P(x)$ & 5 & Existential Generalization\\
+1,2 & (7) $ \exists x \neg P(x)$ & 2,6 & Existential Instantiation(3)\\
+\end{tabular}
+
+
+\newpage
+
+\noindent
+Axiom 1: \\
+
+$ \vdash P \to (Q \to P)$\\
+
+\begin{tabular}{llll}
+1 & (1) $P$ &  & Premise\\
+2 & (2) $Q$ &  & Premise\\
+1 & (3) $Q \to P$ & 1 & (Arrow Intro)(2)\\
+ & (4) $P \to (Q \to P)$ & 3 & (Arrow Intro)(1)\\
+\end{tabular}
+
+\bigskip
+
+\noindent
+Axiom 1 by contradiction: \\
+
+\begin{tabular}{llll}
+1 & (1) $ \neg (P \to (Q \to P))$ &  & Premise\\
+1 & (2) $P \wedge  \neg (Q \to P)$ & 1 & Negated Implication\\
+1 & (3) $P$ &  & Simplification\\
+1 & (4) $ \neg (Q \to P)$ & 2 & Simplification\\
+1 & (5) $Q \wedge  \neg P$ & 4 & Negated Implication\\
+1 & (6) $ \neg P$ & 5 & Simplification\\
+ & (7) $P \to (Q \to P)$ & 3,6 & (Reductio ad Absurdum)(1)\\
+\end{tabular}
+
+\bigskip
+\bigskip
+
+\noindent
+Axiom 2: \\
+
+$ \vdash (P \to (Q \to R)) \to ((P \to Q) \to (P \to R))$\\
+
+\begin{tabular}{llll}
+1 & (1) $P \to (Q \to R)$ &  & Premise\\
+2 & (2) $P \to Q$ &  & Premise\\
+1 & (3) $ \neg P \vee (Q \to R)$ & 1 & Definition of Implication\\
+4 & (4) $P$ &  & Premise\\
+1,4 & (5) $Q \to R$ & 3,4 & Disjunctive Syllogism\\
+1,4 & (6) $ \neg Q \vee R$ & 5 & Definition of Implication\\
+2,4 & (7) $Q$ & 2,4 & Modus Pones\\
+1,2,4 & (8) $R$ & 6,7 & Disjunctive Syllogism\\
+1,2 & (9) $P \to R$ & 8 & (Arrow Intro)(4)\\
+1 & (10) $(P \to Q) \to (P \to R)$ & 9 & (Arrow Intro)(2)\\
+ & (11) $(P \to (Q \to R)) \to ((P \to Q) \to (P \to R))$ & 10 & (Arrow Intro)(1)\\
+\end{tabular}
+
+\bigskip
+
+\noindent
+Axiom 2 by contradiction: \\
+
+\begin{tabular}{llll}
+1 & (1) $ \neg ((P \to (Q \to R)) \to ((P \to Q) \to (P \to R)))$ &  & Premise\\
+1 & (2) $(P \to (Q \to R)) \wedge  \neg ((P \to Q) \to (P \to R))$ & 1 & Negated Implication\\
+1 & (3) $P \to (Q \to R)$ & 2 & Simplification\\
+1 & (4) $ \neg ((P \to Q) \to (P \to R))$ & 2 & Simplification\\
+1 & (5) $(P \to Q) \wedge  \neg (P \to R)$ & 4 & Negated Implication\\
+1 & (6) $P \to Q$ & 5 & Simplification\\
+1 & (7) $ \neg (P \to R)$ & 5 & Simplification\\
+1 & (8) $P \wedge  \neg R$ & 7 & Negated Implication\\
+1 & (9) $P$ & 8 & Simplification\\
+1 & (10) $ \neg R$ & 8 & Simplification\\
+1 & (11) $Q$ & 6,9 & Modus Pones\\
+1 & (12) $Q \to R$ & 3,9 & Modus Pones\\
+1 & (13) $R$ & 11,12 & Modus Pones\\
+ & (14) $(P \to (Q \to R)) \to ((P \to Q) \to (P \to R))$ & 10,13 & (Reductio ad Absurdum)(1)\\
+\end{tabular}
+
+\newpage
+
+\noindent
+Axiom 3: \\
+
+$ \vdash ( \neg P \to  \neg Q) \to (Q \to P)$\\
+
+\begin{tabular}{llll}
+1 & (1) $ \neg P \to  \neg Q$ &  & Premise\\
+1 & (2) $Q \to P$ & 1 & Contrapositive\\
+ & (3) $( \neg P \to  \neg Q) \to (Q \to P)$ & 2 & (Arrow Intro)(1)\\
+\end{tabular}
+
+\bigskip
+
+\noindent
+Axiom 3 by contradiction: \\
+
+\begin{tabular}{llll}
+1 & (1) $ \neg (( \neg P \to  \neg Q) \to (Q \to P))$ &  & Premise\\
+1 & (2) $( \neg P \to  \neg Q) \wedge  \neg (Q \to P)$ & 1 & Negated Implication\\
+1 & (3) $ \neg P \to  \neg Q$ & 2 & Simplification\\
+1 & (4) $ \neg (Q \to P)$ & 2 & Simplification\\
+1 & (5) $Q \wedge  \neg P$ & 4 & Negated Implication\\
+1 & (6) $Q$ & 5 & Simplification\\
+1 & (7) $ \neg P$ & 5 & Simplification\\
+1 & (8) $ \neg Q$ & 3,7 & Modus Pones\\
+ & (9) $( \neg P \to  \neg Q) \to (Q \to P)$ & 6,8 & (Reductio ad Absurdum)(1)\\
+\end{tabular}
+
+\bigskip
+\bigskip
+
+
+
+
+
+
+
+\end{document}
