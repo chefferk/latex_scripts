@@ -45,6 +45,7 @@ Reductio ad Premisebsurdum
   * Cannot have empty assumption set (e.g. axioms)
     * FIX: add a character place holder (e.g. 'x') and remove it later
     * TODO : find a fix for this
+  * Top line should be: Premises (comma separated)	|-	Conclusion
 
 ```
 P v Q, ~P v R |- Q v R
